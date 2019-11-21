@@ -191,8 +191,10 @@ class Executor implements Runnable {
 
     logger.info(
         String.format(
-            "Executor::executeCommand(%s): Completed command: exit code %d",
+            "Executor::executeCommand(%s): %s\n\tdir=%s exitCode=%s",
             operation.getName(),
+            operationContext.command,
+            operationContext.execDir,
             resultBuilder.getExitCode()));
 
     operationContext.executeResponse.getStatusBuilder()
